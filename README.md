@@ -10,7 +10,7 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: *YourNameHere*
-* ID: *YourIdHere*
+* Name: Nguyễn Huy Hùng
+* ID: BI12-183
 * Group ID: *Your Group ID here*
 * Project Name: *Your Project Name here*
