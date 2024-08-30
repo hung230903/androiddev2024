@@ -12,5 +12,5 @@ Student Info
 
 * Name: Nguyễn Huy Hùng
 * ID: BI12-183
-* Group ID: *Your Group ID here*
+* Group ID: 18
 * Project Name: *Your Project Name here*
