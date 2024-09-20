@@ -12,5 +12,5 @@ Student Info
 
 * Name: Nguyễn Huy Hùng
 * ID: BI12-183
-* Group ID: 18
-* Project Name: *Your Project Name here*
+* Group ID: 17
+* Project Name: OpenVisionAPI Front-end
