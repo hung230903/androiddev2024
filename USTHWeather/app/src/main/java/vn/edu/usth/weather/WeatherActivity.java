@@ -1,16 +1,13 @@
 package vn.edu.usth.weather;
 
-import android.annotation.SuppressLint;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
-import android.nfc.Tag;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,15 +19,15 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 public class WeatherActivity extends AppCompatActivity {
     private static final String tag = "WeatherActivity";
-    AsyncTask<Void, Integer, Bitmap> task;
+    final Handler handler = new Handler(Looper.getMainLooper()) {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            String content = msg.getData().getString("server_response");
+            Toast.makeText(WeatherActivity.this, content, Toast.LENGTH_SHORT).show();
+        }
+    };
     ViewPager2 viewPager2;
     ViewPagerAdapter viewPagerAdapter;
     TabLayout tabLayout;
@@ -40,11 +37,6 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-
-        // AsyncTask
-        initAsyncTask();
-        task.execute();
-
         // set view
         setContentView(R.layout.weather_activity);
         // toolbar
@@ -72,47 +64,6 @@ public class WeatherActivity extends AppCompatActivity {
         if (!mediaPlayer.isPlaying()) mediaPlayer.release();
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private void initAsyncTask() {
-        task = new AsyncTask<Void, Integer, Bitmap>() {
-            @Override
-            protected Bitmap doInBackground(Void... voids) throws RuntimeException {
-
-                try {
-                    URL url = new URL("https://i.pinimg.com/originals/28/db/ff/28dbffd19ce1ec872dc51f62725b8d51.jpg");
-
-                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                    connection.setRequestMethod("GET");
-                    connection.setDoInput(true);
-                    connection.connect();
-
-                    int response = connection.getResponseCode();
-                    Log.i(tag, "The response is: " + response);
-                    InputStream is = connection.getInputStream();
-
-                    Bitmap bitmap = BitmapFactory.decodeStream(is);
-
-                    connection.disconnect();
-
-                    return bitmap;
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-
-            @Override
-            protected void onProgressUpdate(Integer... values) {
-                super.onProgressUpdate(values);
-            }
-
-            @Override
-            protected void onPostExecute(Bitmap bit) {
-                ImageView bg = (ImageView) findViewById(R.id.background);
-                bg.setImageBitmap(bit);
-            }
-        };
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -125,9 +76,29 @@ public class WeatherActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.refresh) {
-            return true;
+            sendRequest();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void sendRequest() {
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                Bundle bundle = new Bundle();
+                bundle.putString("server_response", "Network response");
+
+                Message msg = new Message();
+                msg.setData(bundle);
+                handler.sendMessage(msg);
+            }
+        });
+        t.start();
     }
 
     @Override
