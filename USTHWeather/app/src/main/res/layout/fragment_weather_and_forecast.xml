@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".WeatherAndForecastFragment">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <fragment
-        android:id="@+id/wf"
-        android:name="vn.edu.usth.weather.WeatherFragment"
-        tools:layout="@layout/fragment_weather"
+    <FrameLayout
+        android:id="@+id/weather"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <fragment
-        android:id="@+id/fc"
-        android:name="vn.edu.usth.weather.ForecastFragment"
-        tools:layout="@layout/fragment_forecast"
+    <FrameLayout
+        android:id="@+id/forecast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 </LinearLayout>
