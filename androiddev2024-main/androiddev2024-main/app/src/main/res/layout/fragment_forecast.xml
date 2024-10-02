@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="60dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:id="@+id/forecast"
+    tools:context=".ForecastFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/dark_green_40alpha"
+        android:orientation="vertical" >
+
+        <!-- 1st -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="15dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="15dp"
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/word_padding"
+                android:text="@string/Monday"
+                android:textSize="17sp"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:layout_width="@dimen/small_img_width_111dp"
+                android:layout_height="@dimen/small_img_height_62dp"
+                android:contentDescription="@string/Sunny"
+                android:src="@drawable/sunny" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:text="@string/sunny_n25c_27c" />
+
+        </LinearLayout>
+
+        <!-- 2nd -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            tools:ignore="UseCompoundDrawables" >
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Tuesday"
+                android:paddingStart="@dimen/word_padding"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="@dimen/small_img_width_111dp"
+                android:layout_height="@dimen/small_img_height_62dp"
+                android:src="@drawable/cloudy" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/cloudy_n22c_23c"
+                android:autoSizeTextType="uniform" />
+        </LinearLayout>
+
+        <!-- 3rd -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            tools:ignore="UseCompoundDrawables" >
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Wednesday"
+                android:paddingStart="@dimen/word_padding"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="@dimen/small_img_width_111dp"
+                android:layout_height="@dimen/small_img_height_62dp"
+                android:src="@drawable/rain" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/rainy_n20c_21c"
+                android:autoSizeTextType="uniform" />
+        </LinearLayout>
+
+        <!-- 4th -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            tools:ignore="UseCompoundDrawables" >
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Thursday"
+                android:paddingStart="@dimen/word_padding"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="@dimen/small_img_width_111dp"
+                android:layout_height="@dimen/small_img_height_62dp"
+                android:src="@drawable/drizzly" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/drizzly_n20c_21c"
+                android:autoSizeTextType="uniform" />
+        </LinearLayout>
+
+        <!-- 5th -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            tools:ignore="UseCompoundDrawables" >
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Friday"
+                android:paddingStart="@dimen/word_padding"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="@dimen/small_img_width_111dp"
+                android:layout_height="@dimen/small_img_height_62dp"
+                android:src="@drawable/windy" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/windy_n20c_21c"
+                android:autoSizeTextType="uniform" />
+        </LinearLayout>
+
+        <!-- 6th -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            tools:ignore="UseCompoundDrawables" >
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Saturday"
+                android:paddingStart="@dimen/word_padding"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="@dimen/small_img_width_111dp"
+                android:layout_height="@dimen/small_img_height_62dp"
+                android:src="@drawable/partly_cloudy" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/partly_cloudy_n22c_23c"
+                android:autoSizeTextType="uniform" />
+
+        </LinearLayout>
+
+        <!-- 7th -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            tools:ignore="UseCompoundDrawables" >
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Sunday"
+                android:paddingStart="@dimen/word_padding"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="@dimen/small_img_width_111dp"
+                android:layout_height="@dimen/small_img_height_62dp"
+                android:src="@drawable/partly_cloudy" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/partly_cloudy_n22c_23c"
+                android:autoSizeTextType="uniform" />
+
+        </LinearLayout>
+
+        <!-- 8th -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            tools:ignore="UseCompoundDrawables" >
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Monday"
+                android:paddingStart="@dimen/word_padding"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="@dimen/small_img_width_111dp"
+                android:layout_height="@dimen/small_img_height_62dp"
+                android:src="@drawable/sunny" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/sunny_n24c_26c"
+                android:autoSizeTextType="uniform" />
+
+        </LinearLayout>
+
+        <!-- 9th -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            tools:ignore="UseCompoundDrawables" >
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Tuesday"
+                android:paddingStart="@dimen/word_padding"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="@dimen/small_img_width_111dp"
+                android:layout_height="@dimen/small_img_height_62dp"
+                android:src="@drawable/partly_cloudy_windy" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/partly_cloudy_windy_n22c_24c"
+                android:autoSizeTextType="uniform" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
